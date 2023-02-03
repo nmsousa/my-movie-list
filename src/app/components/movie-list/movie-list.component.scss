@@ -1,0 +1,20 @@
+.main-container {
+    margin: 16px;
+
+    .search-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+        float: right;
+    }
+
+    .search-full-width {
+        width: 100%;
+    }
+
+    .fab-add-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+}

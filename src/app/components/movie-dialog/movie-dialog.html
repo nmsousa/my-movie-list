@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Create Movie</h1>
+<div mat-dialog-content>
+    <p>Insert the movie data</p>
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput cdkFocusInitial [(ngModel)]="movie.title">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Year</mat-label>
+        <input matInput type="number" [(ngModel)]="movie.year">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button color="primary" (click)="onCancelClick()">Cancel</button>
+    <button mat-stroked-button color="accent" [mat-dialog-close]="movie">Create</button>
+</div>
