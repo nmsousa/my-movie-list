@@ -5,6 +5,7 @@ import {MatSort, Sort} from "@angular/material/sort";
 import {MatDialog} from "@angular/material/dialog";
 import {MovieDialog} from "../movie-dialog/movie-dialog";
 import mockedMovies from "../../../assets/mock-movies.json";
+import {MatCheckboxChange} from "@angular/material/checkbox";
 
 @Component({
     selector: 'app-movie-list',
@@ -17,7 +18,8 @@ export class MovieListComponent implements OnInit, AfterViewInit {
     @ViewChild(MatSort) sort: MatSort;
 
     dataSource: MatTableDataSource<any> = new MatTableDataSource<Movie>();
-    displayedColumns: string[] = ['year', 'title', 'seenStatus'];
+    allColumns: string[] = ['year', 'title', 'posterUrl', 'genres', 'director', 'actors', 'seenStatus', 'plot', 'runtime'];
+    displayedColumns: string[] = ['year', 'title', 'genres', 'director', 'actors', 'seenStatus', 'plot', 'runtime'];
     // filterText: string = '';
 
     constructor(private changeDetectorRef: ChangeDetectorRef, private dialog: MatDialog) {
@@ -63,5 +65,14 @@ export class MovieListComponent implements OnInit, AfterViewInit {
     onSortChange($event: Sort) {
         //this.refreshTableRows();
         // this.table.renderRows();
+    }
+
+    onShowPostersChange(event: MatCheckboxChange) {
+        // If we want to show the Movie Posters
+        if (event.checked) {
+            this.displayedColumns = [...this.allColumns];
+        } else {
+            this.displayedColumns = this.allColumns.filter(column => column !== 'posterUrl');
+        }
     }
 }

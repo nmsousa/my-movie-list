@@ -9,6 +9,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MaterialModule} from "../material.module";
 import {MovieDialog} from "./components/movie-dialog/movie-dialog";
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
     declarations: [
@@ -23,7 +25,9 @@ import {MatDialogModule} from "@angular/material/dialog";
         FormsModule,
         ReactiveFormsModule,
         MaterialModule,
-        MatDialogModule
+        MatDialogModule,
+        MatGridListModule,
+        MatCheckboxModule
     ],
     providers: [],
     bootstrap: [AppComponent]

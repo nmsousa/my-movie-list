@@ -1,16 +1,91 @@
-<h1 mat-dialog-title>Create Movie</h1>
-<div mat-dialog-content>
-    <p>Insert the movie data</p>
-    <mat-form-field appearance="fill">
-        <mat-label>Title</mat-label>
-        <input matInput cdkFocusInitial [(ngModel)]="movie.title">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Year</mat-label>
-        <input matInput type="number" [(ngModel)]="movie.year">
-    </mat-form-field>
+<h1 mat-dialog-title>Movie Details:</h1>
+
+<div mat-dialog-content class="container">
+    <!-- 1st row -->
+    <div class="row">
+        <div class="col">
+            <!-- Title -->
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input matInput cdkFocusInitial [(ngModel)]="movie.title">
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <!-- Year -->
+            <mat-form-field appearance="fill">
+                <mat-label>Year</mat-label>
+                <input matInput type="number" [(ngModel)]="movie.year">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <!-- 2nd row -->
+    <div class="row">
+        <div class="col">
+            <!-- Plot -->
+            <mat-form-field appearance="fill">
+                <mat-label>Plot</mat-label>
+                <input matInput [(ngModel)]="movie.plot">
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <!-- Genres -->
+            <mat-form-field appearance="fill">
+                <mat-label>Genres</mat-label>
+                <input matInput [(ngModel)]="movie.genres">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <!-- 3rd row -->
+    <div class="row">
+        <div class="col">
+            <!-- Director -->
+            <mat-form-field appearance="fill">
+                <mat-label>Director</mat-label>
+                <input matInput [(ngModel)]="movie.director">
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <!-- Actors -->
+            <mat-form-field appearance="fill">
+                <mat-label>Actors</mat-label>
+                <input matInput [(ngModel)]="movie.actors">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <!-- 4th row -->
+    <div class="row">
+        <div class="col">
+            <!-- PosterUrl -->
+            <mat-form-field appearance="fill">
+                <mat-label>Poster</mat-label>
+                <input matInput [(ngModel)]="movie.posterUrl">
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <!-- Runtime -->
+            <mat-form-field appearance="fill">
+                <mat-label>Runtime</mat-label>
+                <input matInput [(ngModel)]="movie.runtime">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <!-- 5th row -->
+    <div class="row">
+        <div class="col">
+            <!-- SeenStatus -->
+            <mat-form-field appearance="fill">
+                <mat-label>Seen Status</mat-label>
+                <input matInput [(ngModel)]="movie.seenStatus">
+            </mat-form-field>
+        </div>
+    </div>
 </div>
-<div mat-dialog-actions>
-    <button mat-button color="primary" (click)="onCancelClick()">Cancel</button>
-    <button mat-stroked-button color="accent" [mat-dialog-close]="movie">Create</button>
+
+<div mat-dialog-actions class="action-btn-container">
+    <button mat-stroked-button color="primary" (click)="onCancelClick()">Cancel</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="movie">Create</button>
 </div>

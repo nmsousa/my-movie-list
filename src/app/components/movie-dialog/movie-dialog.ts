@@ -20,11 +20,17 @@ export class MovieDialog implements OnInit {
             id: -1,
             title: '',
             year: new Date().getFullYear(),
+            plot: '',
+            genres: new Array(),
+            director: '',
+            actors: new Array(),
+            posterUrl: '',
+            runtime: 100,
             seenStatus: SeenStatus.HOME
         } as Movie;
     }
 
     onCancelClick() {
-        this.dialogRef.close(this.movie);
+        this.dialogRef.close();
     }
 }
